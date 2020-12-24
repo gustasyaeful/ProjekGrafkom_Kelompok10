@@ -46,7 +46,7 @@ void myKeyboard(unsigned char key, int x, int y){
 }
 
 void init(){
- GLfloat LightPosition[] = {10.0f, 10.0f, 20.0f, 0.0f};
+ GLfloat LightPosition[] = {10.0f, 90.0f, 20.0f, 0.0f};
  GLfloat LightAmbient[] = {0.0f, 1.0f, 0.0f, 1.0f};
  GLfloat LightDiffuse[] = {0.7f, 0.7f, 0.7f, 1.0f};
  GLfloat LightSpecular[] = {0.2f, 0.2f, 0.2f, 1.0f};
@@ -66,7 +66,37 @@ void init(){
  return;
 
 }
+void jalan(){
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glTranslatef(0,0,0);
+glColor3f(0.2,0.1,0);
 
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glTranslatef(-1,0,0.2);
+glScalef(2,0.05,2);
+glutSolidCube(0.4);
+glPopMatrix();
+glColor3f(0.2,0.1,0);
+
+glPushMatrix();
+glTranslatef(-3,0,0.2);
+glScalef(2,0.05,2);
+glutSolidCube(0.4);
+glPopMatrix();
+glColor3f(0.2,0.1,0);
+
+glPushMatrix();
+glTranslatef(-2,0,0);
+glScalef(2,0.05,2);
+glutSolidCube(0.4);
+glPopMatrix();
+glColor3f(0.2,0.1,0);
+
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+}
 void pagar(){
 //pagar
 glPushMatrix();
@@ -130,7 +160,7 @@ glPopMatrix();
 }
 
 void renderScene(void){
- GLfloat LightPosition[] = {10.0f, 10.0f, 20.0f, 0.0f};
+ GLfloat LightPosition[] = {10.0f, 10.0f, 20.0f, 1.0f};
  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
  glClearColor(1,1,1,1);
  LightPosition[0] = cx;
@@ -146,8 +176,8 @@ void renderScene(void){
  //tembok
  glPushMatrix();
  glEnable(GL_COLOR_MATERIAL);
- glColor3f(0,0,0.5);
- glRotatef(45,0,1,0);
+ glColor3f(0,0.2,1);
+ glRotatef(0,0,1,0);
  glutSolidCube(3);
  glDisable(GL_COLOR_MATERIAL);
 
@@ -217,105 +247,12 @@ glTranslatef(6,0,-8);
 pagar();
 glPopMatrix();
 
- //pintu
+//pintu
 glPushMatrix();
 glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.5,0.8,0);
+glColor3f(1,1,0.0);
 glTranslatef(-0.6,-1,1.46);
 glScalef(7,10,1);
-glutSolidCube(0.1);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
- 
- //lampujalan
-//belakang
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0,0,0.1);
-glTranslatef(0.5,-1,3.46);
-glScalef(1,2,1);
-glutSolidCube(0.5);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(1,1,0);
-glTranslatef(0.5,0,3.46);
-glScalef(1,1,1);
-glutSolidSphere(0.5,20,20);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-//depan
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0,0,0.1);
-glTranslatef(0.5,-1,7.46);
-glScalef(1,2,1);
-glutSolidCube(0.5);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(1,1,0);
-glTranslatef(0.5,0,7.46);
-glScalef(1,1,1);
-glutSolidSphere(0.5,20,20);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-//ayunan
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.1f,0.0f,0.0f);
-glTranslatef(-2,-0.5,3.46);
-glScalef(1,10,1);
-glutSolidCube(0.2);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.1f,0.0f,0.0f);
-glTranslatef(-5,-0.5,3.46);
-glScalef(1,10,1);
-glutSolidCube(0.2);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.1f,0.0f,0.0f);
-glTranslatef(-3.5,0.5,3.46);
-glScalef(16,1,1);
-glutSolidCube(0.2);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.1f,0.0f,0.0f);
-glTranslatef(-3,-0.2,3.46);
-glScalef(1,12,1);
-glutSolidCube(0.1);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.1f,0.0f,0.0f);
-glTranslatef(-4,-0.2,3.46);
-glScalef(1,12,1);
-glutSolidCube(0.1);
-glDisable(GL_COLOR_MATERIAL);
-glPopMatrix();
-
-glPushMatrix();
-glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.1f,0.0f,0.0f);
-glTranslatef(-3.5,-0.8,3.46);
-glScalef(10,1,5);
 glutSolidCube(0.1);
 glDisable(GL_COLOR_MATERIAL);
 glPopMatrix();
@@ -323,7 +260,7 @@ glPopMatrix();
 //jendela
 glPushMatrix();
 glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.5,0.8,0);
+glColor3f(10,10,10);
 glTranslatef(0.5,0.1,1.46);
 glScalef(3,3,1);
 glutSolidCube(0.1);
@@ -332,7 +269,7 @@ glPopMatrix();
 
 glPushMatrix();
 glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.5,0.8,0);
+glColor3f(10,10,10);
 glTranslatef(0.9,0.1,1.46);
 glScalef(3,3,1);
 glutSolidCube(0.1);
@@ -341,7 +278,7 @@ glPopMatrix();
 
 glPushMatrix();
 glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.5,0.8,0);
+glColor3f(10,10,10);
 glTranslatef(0.9,-0.3,1.46);
 glScalef(3,3,1);
 glutSolidCube(0.1);
@@ -350,7 +287,7 @@ glPopMatrix();
 
 glPushMatrix();
 glEnable(GL_COLOR_MATERIAL);
-glColor3f(0.5,0.8,0);
+glColor3f(10,10,10);
 glTranslatef(0.5,-0.3,1.46);
 glScalef(3,3,1);
 glutSolidCube(0.1);
@@ -363,8 +300,8 @@ glPopMatrix();
 //atap
  glPushMatrix();
  glEnable(GL_COLOR_MATERIAL);
- glColor3f(0.6,0,0);
- glRotatef(0,0,1,0);
+ glColor3f(1.2,0,0);
+ glRotatef(45,0,1,0);
  glTranslatef(0,1.5,0);
  glScalef(3,1.3,3);
  glutSolidOctahedron();
@@ -374,11 +311,207 @@ glPopMatrix();
  //Tanah
 glPushMatrix();
 glEnable(GL_COLOR_MATERIAL);
-glColor3f(0,2,0);
-glTranslatef(2.5,-1.6,2.5);
-glRotatef(45,0,1,0);
+glColor3f(0,10,0);
+glTranslatef(0,-1.6,3.5);
+glRotatef(0,0,1,0);
 glScalef(7.5,0.03,7.5);
 glutSolidCube(2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+//Aspal
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(0,0,0);
+glTranslatef(0,-1.6,7);
+glRotatef(0,0,1,0);
+glScalef(7.5,0.02,7.5);
+glutSolidCube(2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+//Garis Jalan
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(10,10,10);
+glTranslatef(0,-1.5,12.75);
+glRotatef(0,0,1,0);
+glScalef(1.5,0.02,0.3);
+glutSolidCube(2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(10,10,10);
+glTranslatef(5,-1.5,12.75);
+glRotatef(0,0,1,0);
+glScalef(1.5,0.02,0.3);
+glutSolidCube(2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(10,10,10);
+glTranslatef(-5,-1.5,12.75);
+glRotatef(0,0,1,0);
+glScalef(1.5,0.02,0.3);
+glutSolidCube(2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+//jalan setapak
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,2);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,3);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,4);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,5);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,6);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,7);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,8);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,9);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,10);
+jalan();
+glPopMatrix();
+
+glPushMatrix();
+glRotatef(0,0,1,0);
+glTranslatef(2,-1.5,10.3);
+jalan();
+glPopMatrix();
+
+//lampujalan
+//belakang
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(0,0,0.1);
+glTranslatef(2,-1,3.46);
+glScalef(1,2,1);
+glutSolidCube(0.5);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(1,1,0);
+glTranslatef(2,0,3.46);
+glScalef(1,1,1);
+glutSolidSphere(0.5,20,20);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+//depan
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(0,0,0.1);
+glTranslatef(2,-1,7.46);
+glScalef(1,2,1);
+glutSolidCube(0.5);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(1,1,0);
+glTranslatef(2,0,7.46);
+glScalef(1,1,1);
+glutSolidSphere(0.5,20,20);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+//ayunan
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(0.3,0.0,1);
+glTranslatef(-2,-0.5,3.46);
+glScalef(1,10,1);
+glutSolidCube(0.2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(0.3,0.0,1);
+glTranslatef(-5,-0.5,3.46);
+glScalef(1,10,1);
+glutSolidCube(0.2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(0.3,0.0,1);
+glTranslatef(-3.5,0.5,3.46);
+glScalef(16,1,1);
+glutSolidCube(0.2);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(1.5,3,0);
+glTranslatef(-3,-0.2,3.46);
+glScalef(1,12,1);
+glutSolidCube(0.1);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(1.5,3,0);
+glTranslatef(-4,-0.2,3.46);
+glScalef(1,12,1);
+glutSolidCube(0.1);
+glDisable(GL_COLOR_MATERIAL);
+glPopMatrix();
+
+glPushMatrix();
+glEnable(GL_COLOR_MATERIAL);
+glColor3f(3,0,1);
+glTranslatef(-3.5,-0.8,3.46);
+glScalef(10,1,5);
+glutSolidCube(0.1);
 glDisable(GL_COLOR_MATERIAL);
 glPopMatrix();
 
